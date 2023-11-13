@@ -4,29 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ifeanyi Arinze</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 
     <div class="top">
-        <div id="jh">
+        <label id="jh">
         <img src="Group 1.png" alt="">
         <h2>JHomes</h2>
+        </label>
+
+        <nav class="nav">
+            <p href="#">Home</p>
+            <p href="#">About</p>
+            <p id="active" href="#">Blog</p>
+            <p class="tt" href="#">Login</p>
+            <p href="#">Sign Up</p>
+        </nav>
+
+        <div class="icon">
+
+         <div class="one">
+            <div class="line line-one"></div>
+         </div>
+
+         <div class="two">
+            <div class="line line-two"></div>
         </div>
 
-        <div class="contain" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-          </div>
+        <div class="three">
+            <div class="line line-three"></div>
+        </div>
+
+        </div>
+
         
-        <div class="dd">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a id="al" href="#">Blog</a>
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-        </div>
-        </div>
+    </div>
 
         <div class="main">
             <h2>How to Decorate on a<br>
@@ -131,7 +144,14 @@
     </div>
     </footer>
 
+    <script src="script.js">
+        function myFunction(x) {
+        x.classList.toggle("change");
+    </script>
+
     </div>
+
+    
     
 </body>
 </html>

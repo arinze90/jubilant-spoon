@@ -9,27 +9,6 @@ body {
     height: 100%;
 }
 
-.contain {
-    display: inline-block;
-    cursor: pointer;
-}
-
-
-
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
-  }
-
-.change .bar2 {
-    opacity: 0;
-  }
-
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
-  }
-
 .container {
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
@@ -41,6 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 2% 7%;
     height: 15%;
 }
@@ -51,16 +31,46 @@ body {
     gap: 15%;
 }
 
- .top a {
+.nav  {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: -1%;
+    font-size: 17px;
     color: black;
-    text-decoration: none;
-    padding: 8px;
 }
 
-#al {
-    color: black;
+.icon {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    cursor: pointer;
+    display: none;
+}
+
+.one {
+    margin-bottom: 5px;
+}
+
+.two {
+    margin-bottom: 5px;
+}
+
+.line {
+    width: 50px;
+    height: 5px;
+    padding: 4px 0;
+    background-color: black;
+    display: non;
+}
+
+#active {
+    color: rgba(0, 0, 0, 0.705);
     text-decoration-line: underline;
     text-decoration-color: darkorange;
+}
+a#active,a:hover {
+    color: black;
 }
 
 .main {
@@ -78,7 +88,7 @@ body {
 }
 
 #main-a {
-    background-color: yellow;
+    background-color: #ffbf23;
     text-decoration: none;
     color: black;
     border-radius: 10px;
@@ -110,7 +120,7 @@ body {
 
 #first {
     color: black;
-    background-color: yellow;
+    background-color: #ffbf23;
     border-radius: 10px;
     text-decoration: none;
     padding: 12px 23px;
@@ -270,161 +280,72 @@ footer p {
     margin:0 1%;
 }
 
-@media only screen and (max-width: 400px) {
-
-    .container {
-        padding: 0 5%;
-    }
-
-    .top {
-        display: grid;
-        grid-template-columns: auto auto;
-
-    }
-
-    .dd a {
-        color: white;
-    }
-
-    #al {
-        color: white;
-        text-decoration: none;
-    }
-
-    .all {
-        display: grid;
-        grid-row-gap: 20%;
-    }
-
-    #alink {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        font-size: 19px;
-    }
-
-    #first {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .main {
-        display: flex;
-        justify-content: center;
-        padding-top: 0;
-        padding-bottom: 5%;
-    }
-
-    .main h2 {
-        font-size: 50px;
-    }
-
-    #main-a {
-        background-color: yellow;
-        text-decoration: none;
-        color: black;
-        border-radius: 10px;
-        text-align: center;
-        width: 90%;
-        padding: 13px 10px;
-    }
-
-    .more {
-        display: grid;
-        grid-template-columns: auto;
-        justify-content: center;
-        height: 250px;
-        padding-top: 5%;
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .more h2 {
-        font-size: 23px;
-    }
-
-    .card {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: auto;
-        gap: 5%;
-        margin-bottom: 25%;
-    }
-
-    .footer {
-        display: grid;
-        grid-template-columns: auto;
-        justify-content: center;
-        padding: 5% 0;
-    }
-
-    #foot {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: cente;
-        align-items: center;
-        gap: 6%;
-    }
-
-    .copy {
-        display: grid;
-        grid-template-columns: auto;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-        gap: 25%;
-        padding: 10% 0;
-    }
-
-    .copy p {
-        text-align: center;
-        font-size: 19px;
-    }
-
-    #app {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        justify-content: center;
-        gap: 5%;
-    }
-
-    #co-img {
-        width: 40px;
-        gap: 10%;
-    }
-
-    .grid-con {
-        display: grid;
-        grid-template-columns: auto;
-        gap: 0;
-        padding: 0 5%;
-    }
-
-    .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 6px 0;
-        transition: 0.4s;
-      }
-    
-}
-
 @media only screen and (max-width: 700px) {
 
+    nav.visible + .icon .one {
+        transform: rotate(45deg);
+        margin-bottom: -5px;
+    }
+
+    nav.visible + .icon .two {
+        transform: rotate(-45deg);
+        margin-bottom: -5px;
+    }
+
+    nav.visible + .icon .three {
+        transform: rotate(-45deg);
+        margin-bottom: -5px;
+        display: none;
+    }
+
+    nav.visible + .icons .line {
+        background-color: red;
+    }
+
     .top {
-        display: grid;
-        grid-template-columns: auto auto;
-
-
+        display: flex;
+        align-items: center;
+        background-color: white;
     }
 
-    .dd a {
-        color: white;
+    #id {
+        z-index: -1;
     }
 
-    #al {
-        color: white;
-        text-decoration: none;
+    .nav  {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        top: 15%;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+        color: black;
+        display: none;
+    }
+
+    nav.visible {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 40px;
+        line-height: 50px;
+        background-color: #f3f6f1;
+        width: 100%;
+        height: 100vh;
+        color: #141414;
+    }
+
+    .icon {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+        display: block;
     }
 
     .all {
@@ -455,7 +376,7 @@ footer p {
     }
 
     #main-a {
-        background-color: yellow;
+        background-color: #ffbf23;
         text-decoration: none;
         color: black;
         border-radius: 10px;
@@ -538,13 +459,5 @@ footer p {
     #img {
         padding: 3% 5%;
     }
-
-    .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 6px 0;
-        transition: 0.4s;
-      }
     
 }
